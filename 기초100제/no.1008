@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+    printf("\u250C\u252C\u2510\n"); // 유니코드로 특수문자 표현
+    printf("\u251C\u253C\u2524\n");
+    printf("\u2514\u2534\u2518");
+    return 0;
+}
