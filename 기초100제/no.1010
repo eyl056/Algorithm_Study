@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    int n; // 정수형 변수 선언
+    scanf("%d",&n); // 변수에 정수값 저장
+    printf("%d",n); // 변수에 저장되어있는 값 출력
+    
+    return 0;
+}
