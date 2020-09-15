@@ -5,3 +5,4 @@ int main() {
     scanf("%c %c",&x,&y);
     printf("%c %c",y,x); // 입력받은 순서 반대로 출력하기
 }
+
