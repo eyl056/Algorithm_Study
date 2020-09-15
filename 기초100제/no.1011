@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+int main() {
+    char x; // 문자형 변수 선언
+    scanf("%c",&x); // 변수 x에 입력받은 문자 저장
+    printf("%c",x);
+}
