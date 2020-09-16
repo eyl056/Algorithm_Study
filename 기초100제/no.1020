@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    // 주민등록번호
+    int frontNum, backNum;
+    scanf("%d-%d",&frontNum,&backNum); // 주민등록번호 입력받기
+    printf("%06d%07d",frontNum,backNum); // '-'를 제외한 주민번호 13자리를 모두 붙여 출력
+    // 무조건 앞 6자리, 뒤 7자리를 유지해야 함
+}
