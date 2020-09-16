@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+int main() {
+    int h, m; // 시간, 분
+    scanf("%d:%d",&h,&m); // 콜론(:) 기호 기준으로 두 수가 각 변수에 저장
+    printf("%d:%d",h,m);
+}
