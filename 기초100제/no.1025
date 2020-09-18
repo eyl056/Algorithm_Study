@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <math.h>
+
+/* 정수 1개 입력받아 나누어 출력하기 */
+
+int main() {
+    int a,b,c,d,e; // 다섯 자리로 이루어진 1개의 정수(각 자리수)
+    scanf("%1d%1d%1d%1d%1d",&a,&b,&c,&d,&e); // 각 자리수당 1개씩 따로 입력받을 수 있음
+    
+    printf("[%0.f]\n[%0.f]\n[%0.f]\n[%0.f]\n[%d]", a*pow(10,4), b*pow(10,3), c*pow(10,2), d*pow(10,1), e);
+    // "0.f"
+}
