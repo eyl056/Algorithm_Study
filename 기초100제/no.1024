@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+/* 단어 1개 입력받아 나누어 출력하기 */
+
+int main() {
+    char str[21]; // 단어의 길이는 20자 이하
+    scanf("%s",str); // 문자열의 마지막에 '\0'문자로 마지막 문자임을 나타냄 scanf("%s" ...)
+    for(int i=0; str[i]!='\0' ; i++) { // 널문자 나오기 전까지
+        printf("'%c'\n",str[i]);
+    }
+}
