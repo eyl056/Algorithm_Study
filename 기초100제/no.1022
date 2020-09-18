@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+/**
+ fgets( str, 10, stdin); - 파일에서 문자열을 가져올 때와 마찬가지로 줄 바꿈 문자를 str 배열에 포함시켜 줌
+ stdin - 표준 입력 의미 -> fgets 함수의 세 번째 인자에 stdin을 적으면 표준 입력을 통해서도 문자열 입력 가능
+ */
+
+int main() {
+    char data[2001]; // 2000자까지 data[] 공간에 저장 가능 (마지막에 0값 들어가야 함)
+    fgets(data, 2000, stdin); // 공백도 포함 가능(scanf 함수는 공백 포함 불가)
+    printf("%s",data);
+}
