@@ -10,3 +10,4 @@ int main() {
     fgets(data, 2000, stdin); // 공백도 포함 가능(scanf 함수는 공백 포함 불가)
     printf("%s",data);
 }
+
