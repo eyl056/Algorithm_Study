@@ -5,3 +5,4 @@ int main() {
     scanf("%d",&x);
     printf("%d %d %d",x,x,x); // 공백을 사이에 두고 3번 출력
 }
+
