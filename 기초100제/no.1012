@@ -5,3 +5,4 @@ int main() {
     scanf("%f",&x); // 입력받은 실수 x에 저장
     printf("%f",x); // x 실수형으로 출력
 }
+
