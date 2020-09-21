@@ -5,3 +5,4 @@ int main() {
     scanf("%c",&x); // 변수 x에 입력받은 문자 저장
     printf("%c",x);
 }
+
