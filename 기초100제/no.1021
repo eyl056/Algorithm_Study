@@ -6,3 +6,4 @@ int main() {
     scanf("%s",data); // 배열은 scanf에서 &연산자 필요 없음
     printf("%s",data);
 }
+
