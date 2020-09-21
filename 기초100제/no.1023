@@ -7,3 +7,4 @@ int main() {
     scanf("%d.%d",&a,&b); // .을 기준으로 a와 b 나눠서 바로 입력하기
     printf("%d\n%d",a,b);
 }
+
