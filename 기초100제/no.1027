@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+/* 년월일 입력받아 형식 바꿔 출력하기 */
+
+int main() {
+    int year, month, date; // 년, 월, 일
+    scanf("%d.%d.%d",&year,&month,&date); // .으로 구분되어 입력
+    printf("%02d-%02d-%04d",date,month,year); // 일, 월, 년에 0을 붙여 2,2,4자리로 출력
+}
