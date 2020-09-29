@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+/* 정수 1개 입력받아 그대로 출력하기 */
+
+int main() {
+    // int 데이터형 -> 실수의 범위 -2147483648 ~ +2147483647 (%d)
+    // long long int 데이터형 -> -9,223,372,036,854,775,808 ~ +9,223,372,036,854,775,807 (%lld)
+    
+    long long int num;
+    scanf("%lld", &num); // long long int 형으로 입력
+    printf("%lld", num);
+}
