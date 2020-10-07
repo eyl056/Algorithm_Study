@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+/* 정수 1개 입력받아 1 더해 출력하기 */
+
+int main() {
+    // -2147483648 ~ +2147483647 정수의 범위 => int형
+    // 증감연산자 ++a, --a, a++, a--
+    
+    long long int num; // 정수 1개
+    scanf("%lld",&num); // 입력 받기 // 더해서 int형 범위가 넘어가기 떄문에 long long int형
+    
+    printf("%lld",++num); // num에 1을 더해 출력
+}
