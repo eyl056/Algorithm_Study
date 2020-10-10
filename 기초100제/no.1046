@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    /* 정수 3개 입력받아 합과 평균 출력하기 */
+    
+    int x, y, z;
+    
+    scanf("%d %d %d",&x,&y,&z); // 정수 3개 입력 받기
+    printf("%d\n%.1f",x+y+z,(double)(x+y+z)/3); // 합, 평균(소수점 이하 첫째자리까지 출력)
+
+}
