@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    /* 비교 관계 연산자 */
+    
+    int a, b;
+    scanf("%d %d",&a, &b);
+    
+    if(a!=b) printf("%d",1); // a와 b가 다른 경우 1 출력
+    else printf("%d",0); // 그렇지 않은 경우 0 출력
+}
