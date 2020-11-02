@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    /* 논리 연산자 ! , && , || */
+    // && : and
+    
+    int a, b;
+    scanf("%d %d",&a,&b);
+    
+    if(a&&b) printf("%d",1); // 둘 다 참일 경우에만 1 출력
+    else printf("%d",0); // 그 외의 경우에는 0 출력
+}
