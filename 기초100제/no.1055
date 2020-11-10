@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+/* 하나라도 참이면 참 출력하기 */
+
+int main() {
+    /* 논리 연산자 ! , && , || */
+    // && : and
+    
+    int a, b;
+    scanf("%d %d",&a,&b);
+    
+    if(a||b) printf("%d",1); // 하나라도 참일 경우 1 출력
+    else printf("%d",0); // 그 외의 경우에는 0 출력
+}
