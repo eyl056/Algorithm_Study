@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+/* 참/거짓이 서로 같을 때에만 참 출력하기 */
+
+int main() {
+    int a, b;
+    scanf("%d %d",&a,&b);
+    
+    if(a&&b || !a&&!b) printf("%d",1); // 참/거짓이 같을 경우 1 출력
+    else printf("%d",0); // 그 외의 경우에는 0 출력
+}
