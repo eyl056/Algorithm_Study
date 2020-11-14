@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+/* 참/거짓이 서로 다를 때에만 참 출력하기 */
+
+int main() {
+    /* XOR exclusive 연산 */
+    
+    int a, b;
+    scanf("%d %d",&a,&b);
+    
+    if(a&&!b || !a&&b) printf("%d",1); // 참/거짓이 다를 경우 1 출력
+    else printf("%d",0); // 그 외의 경우에는 0 출력
+}
