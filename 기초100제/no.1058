@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+/* 둘 다 거짓일 경우만 참 출력하기 */
+
+int main() {
+    int a, b;
+    scanf("%d %d",&a,&b);
+    
+    if(!a&&!b) printf("%d",1); // 둘 다 거짓일 경우에 1 출력
+    else printf("%d",0); // 그 외의 경우에는 0 출력
+}
