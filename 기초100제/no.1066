@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+/* [기초-조건/선택실행구조] 정수 3개 입력받아 짝/홀 출력하기 */
+/*
+
+ */
+
+
+int main() {
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c); // 세 수 입력받기
+    
+    // 짝수/홀수 출력하기
+    if(a%2==0) {
+        printf("even\n");
+    } else {
+        printf("odd\n");
+    }
+    
+    if(b%2==0) {
+        printf("even\n");
+    } else {
+        printf("odd\n");
+    }
+    
+    if(c%2==0) {
+        printf("even\n");
+    } else {
+        printf("odd\n");
+    }
+}
