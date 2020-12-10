@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+/* [기초-조건/선택실행구조] 정수 1개 입력받아 분석하기 */
+/*
+
+ */
+
+
+int main() {
+    int a;
+    scanf("%d",&a); // 하나의 수 입력받기
+    
+    if(a>=0) {
+        printf("plus\n");
+        if(a%2==0) {
+            printf("even\n");
+        }
+        else {
+            printf("odd\n");
+        }
+    }
+    else {
+        printf("minus\n");
+        if(a%2==0) {
+            printf("even\n");
+        }
+        else {
+            printf("odd\n");
+        }
+    }
+}
