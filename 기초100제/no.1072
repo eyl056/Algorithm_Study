@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    int count, number;
+    scanf("%d",&count);
+    
+reget:
+    scanf("%d",&number);
+    printf("%d\n",number);
+    
+    if(--count != 0) goto reget;
+}
