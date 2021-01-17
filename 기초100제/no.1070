@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+// switch문에서 break;를 제거하면
+// 멈추지 않고 다음 명령이 실행되는 특성
+
+int main() {
+    int month;
+    scanf("%d",&month);
+    
+    switch(month) {
+        case 12:
+        case 1:
+        case 2:
+            printf("winter\n");
+            break;
+        case 3:
+        case 4:
+        case 5:
+            printf("spring\n");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            printf("summer\n");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            printf("fall\n");
+            break;
+        default:
+            printf("잘못 입력했습니다\n");
+            break;
+    }
+}
