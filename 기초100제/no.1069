@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+// switch()에 주어지는 값은 "정수"값만 가능하며,
+// 문자도 아스키코드 정수값이기 때문에 가능하다.
+int main() {
+    char c;
+    scanf("%c",&c);
+    
+    switch(c) {
+        case 'A':
+            printf("best!!!\n");
+            break;
+        case 'B':
+            printf("good!!\n");
+            break;
+        case 'C':
+            printf("run!\n");
+            break;
+        case 'D':
+            printf("slowly~\n");
+            break;
+        default:
+            printf("what?\n");
+            break;
+    }
+}
