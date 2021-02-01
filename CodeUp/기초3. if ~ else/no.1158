@@ -1,0 +1,6 @@
+x = int(input())
+
+if 30 <= x <= 40 or 60 <= x <= 70:
+    print('win')
+else:
+    print('lose')
