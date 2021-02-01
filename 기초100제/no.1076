@@ -1,0 +1,6 @@
+x = input()
+i = 97
+
+while i != ord(x) + 1:
+    print(chr(i), end=' ')
+    i += 1
