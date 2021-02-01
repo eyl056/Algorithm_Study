@@ -1,0 +1,11 @@
+x = input()
+
+while True:
+    for i in x:
+        if i == 'q':
+            print(i)
+            quit()
+        elif i == ' ':
+            print('', end='')
+        else:
+            print(i)
