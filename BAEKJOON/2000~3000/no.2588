@@ -1,0 +1,13 @@
+a = input()
+b = input()
+
+number3 = int(a) * int(b[2])
+number4 = int(a) * int(b[1])
+number5 = int(a) * int(b[0])
+
+result = number3 + number4 * 10 + number5 * 100
+
+print(number3)
+print(number4)
+print(number5)
+print(result)
