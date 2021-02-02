@@ -1,0 +1,14 @@
+h, m = input().split()
+h = int(h)
+m = int(m)
+
+if m - 45 < 0:
+    if h == 0:
+        h = 24
+    afterH = h - 1
+    afterM = m + 60 - 45
+else:
+    afterH = h
+    afterM = m - 45
+
+print('{} {}'.format(afterH, afterM))
