@@ -1,0 +1,9 @@
+A, B, C = map(int, input().split())
+
+# 판매 비용(총 수입) = C * count
+# 총 비용(=고정비용+가변비용) = A + B * count
+
+if B >= C:
+    print(-1)
+else:
+    print(A // (C - B) + 1)
