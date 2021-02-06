@@ -1,0 +1,27 @@
+from math import sqrt
+
+M = int(input())
+N = int(input())
+
+primeArray = []
+
+# 에네토스테네스의 체
+array = [True] * (N + 1)
+m = int(sqrt(N))
+
+for i in range(2, m + 1):
+    if array[i] == True:
+        for j in range(i + i, N + 1, i):
+            array[j] = False
+
+getPrime = [i for i in range(2, N + 1) if array[i] == True]
+
+for i in range(M, N+1):
+    if i in getPrime:
+        primeArray.append(i)
+
+if not primeArray:
+    print(-1)
+else:
+    print(sum(primeArray))
+    print(primeArray[0])
