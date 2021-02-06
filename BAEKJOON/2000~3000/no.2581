@@ -5,7 +5,7 @@ N = int(input())
 
 primeArray = []
 
-# 에네토스테네스의 체
+# 에라토스테네스의 체
 array = [True] * (N + 1)
 m = int(sqrt(N))
 
