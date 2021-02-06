@@ -1,0 +1,6 @@
+from math import pi
+
+radius = int(input())
+
+print(radius * radius * pi)
+print(radius * radius * 2)
