@@ -1,0 +1,13 @@
+total = int(input())
+
+bag3, bag5 = 0, 0
+while True:
+    if total % 5 == 0:
+        bag5 = total // 5
+        print(bag5 + bag3)
+        break
+    total -= 3
+    bag3 += 1
+    if total < 0:
+        print(-1)
+        break
