@@ -1,0 +1,25 @@
+num = int(input())
+
+# 1 2 3 4 5
+# 1 3 6 10 15
+
+cnt, total, x = 1, 0, 0
+
+for i in range(0, num + 1):
+    # print("total : {}".format(total))
+    # print("num : {}".format(num))
+    if total >= num:
+        # print("i: {}".format(i))
+        x = i
+        if x % 2 == 0:
+            a = x - (total - num)
+            b = total - num + 1
+        else:
+            a = total - num + 1
+            b = x - (total - num)
+        break
+    total += cnt
+    cnt += 1
+
+# print("x : {}".format(x))
+print("{}/{}".format(a, b))
