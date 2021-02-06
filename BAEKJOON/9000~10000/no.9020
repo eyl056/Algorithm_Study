@@ -1,0 +1,28 @@
+from math import sqrt
+
+testcase = int(input())
+
+
+def isPrime(n):
+    array = [True] * n
+    for i in range(2, int(sqrt(n)) + 1):
+        if array[i] == True:
+            for j in range(i + i, n, i):
+                array[j] = False
+
+    return [i for i in range(2, n) if array[i] == True]
+
+
+def answer(even):
+    listPrime = isPrime(even)
+    index = max([i for i in range(len(listPrime)) if listPrime[i] <= even / 2])
+    for i in range(index, -1, -1):
+        for j in range(i, len(listPrime)):
+            if even == listPrime[i] + listPrime[j]:
+                return [listPrime[i], listPrime[j]]
+
+for _ in range(testcase):
+    array = []
+    n = int(input())
+    array = answer(n)
+    print(array[0], array[1])
