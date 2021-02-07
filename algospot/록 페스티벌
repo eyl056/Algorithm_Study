@@ -1,0 +1,15 @@
+testcase = int(input())
+
+for _ in range(testcase):
+    day, team = map(int, input().split())
+    dayList = list(map(int, input().split()))
+    minPrice = []
+    for i in range(day - team + 1):
+        beforeSum = sum(dayList[i: team + i])
+        beforeAvg = beforeSum / team
+        minPrice.append(beforeAvg)
+        for j in range(i + team, day):
+            beforeSum += dayList[j]
+            priceAvg = beforeSum / (j - i + 1)
+            minPrice.append(priceAvg)
+    print(min(minPrice))
