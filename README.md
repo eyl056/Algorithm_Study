@@ -7,4 +7,4 @@ Algorithm Study
 > BAEKJOON<br><br>
 
 
-> 알고리즘 문제 해결 전략<br><br>
+> ALGOSPOT<br><br>
