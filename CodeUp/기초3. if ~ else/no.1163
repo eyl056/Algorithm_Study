@@ -1,0 +1,7 @@
+year, month, date = map(int, input().split())
+
+saju = str(year + month + date)
+if int(saju[len(saju) - 3]) % 2 == 0:
+    print('대박')
+else:
+    print('그럭저럭')
