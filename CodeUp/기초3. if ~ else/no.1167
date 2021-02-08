@@ -1,0 +1,4 @@
+v = list(map(int, input().split()))
+v = sorted(v)
+
+print(v[1])
