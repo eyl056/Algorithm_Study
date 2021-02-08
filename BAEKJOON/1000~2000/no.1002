@@ -1,0 +1,20 @@
+from math import sqrt
+T = int(input())
+for _ in range(T):
+    x1, y1, r1, x2, y2, r2 = map(int, input().split())
+    dis = sqrt(((x2 - x1) ** 2 + (y2 - y1) ** 2))
+    rdis = r1 + r2
+    rdiff = abs(r1 - r2)
+
+    if dis == 0:
+        if r1 == r2:  # 두 원이 일치하는 경우
+            print(-1)
+        else:
+            print(0)
+    else:
+        if dis == rdis or dis == rdiff:  # 한 점에서 만나는 경우(외접, 내접)
+            print(1)
+        elif rdiff < dis < rdis:  # 두 점에서 만나는 경우
+            print(2)
+        else:  # 만나지 않은 경우
+            print(0)
