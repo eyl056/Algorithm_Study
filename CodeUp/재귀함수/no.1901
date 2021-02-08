@@ -1,0 +1,23 @@
+n = int(input())
+def oneToN(n):
+  if(n!=1):
+    oneToN(n-1)
+  print(n)
+oneToN(n)
+
+**********************************
+
+
+X = 1
+
+
+def printNum(n, X):
+    if X > n:
+        quit()
+    print(X)
+    X += 1
+    printNum(n, X)
+
+
+N = int(input())
+printNum(N, X)
