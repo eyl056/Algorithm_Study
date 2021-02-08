@@ -1,0 +1,6 @@
+word = list(input())
+for i in range(len(word)):
+    print(chr(ord(word[i]) + 2), end='')
+print()
+for i in range(len(word)):
+    print(chr((ord(word[i]) * 7) % 80 + 48), end='')
