@@ -1,0 +1,21 @@
+from math import sqrt
+
+# 에라토스테네스의 체
+array = [True] * (2 * 123456 + 1)
+m = int(sqrt(2 * 123456))
+
+for i in range(2, m + 1):
+    if array[i] == True:
+        for j in range(i + i, 2 * 123456 + 1, i):
+            array[j] = False
+
+N = 1
+while N != 0:
+    N = int(input())
+    if N == 0:
+        break
+    primeCount = 0
+    for p in range(N + 1, 2 * N + 1):  # N보다 크고, 2N보다 작거나 같은
+        if array[p]:  # 소수이면
+            primeCount += 1
+    print(primeCount)
