@@ -1,0 +1,10 @@
+word = input()
+open = 0
+close = 0
+for i in range(len(word)):
+    if word[i] == '(':
+        open += 1
+    elif word[i] == ')':
+        close += 1
+
+print(open, close)
