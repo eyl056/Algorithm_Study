@@ -1,0 +1,43 @@
+from math import sqrt
+
+N = int(input())
+
+# 에라토스테네스의 체
+array = [True] * (N + 1)
+m = int(sqrt(N))
+
+for i in range(2, m + 1):
+    if array[i] == True:
+        for j in range(i + i, N + 1, i):
+            array[j] = False
+
+getPrime = [i for i in range(2, N + 1) if array[i] == True]
+array = []
+if N == 1:
+    print("")
+else:
+    while N > 1:
+        for i in getPrime:
+            if N % i == 0:
+                array.append(i)
+                N = N / i
+    for k in sorted(array):
+        print(k)
+        
+        
+        
+        
+        
+        
+ *************************************************
+ 
+ 
+ 
+ N = int(input())
+
+while N > 1:
+    for i in range(2, N + 1):
+        if N % i == 0:
+            print(i)
+            N = N // i
+            break
