@@ -1,7 +1,7 @@
 # Algorithm_Study
 Algorithm Study
 
-> CodeUp<br><br>
+> CodeUp<br>
 https://eyl056.github.io/enyung/categories/#codeup
 
 > BAEKJOON<br>
