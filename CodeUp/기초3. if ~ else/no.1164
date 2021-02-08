@@ -1,0 +1,5 @@
+h1, h2, h3 = map(int, input().split())
+if h1 > 170 and h2 > 170 and h3 > 170:
+    print('PASS')
+else:
+    print('CRASH')
