@@ -1,0 +1,11 @@
+N = int(input())
+array = []
+for _ in range(N):
+    x = int(input())
+    array.append(x)
+
+for i in sorted(array):
+    print(i)
+    
+    
+*****************************
