@@ -1,0 +1,15 @@
+import sys
+from itertools import combinations
+
+N, M = map(int, sys.stdin.readline().split())
+
+card = list(map(int, sys.stdin.readline().split()))
+
+combiSum = []
+combi = list(combinations(card, 3))
+
+for li in combi:
+    if sum(li) <= M:
+        combiSum.append(sum(li))
+
+print(max(combiSum))
