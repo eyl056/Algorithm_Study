@@ -1,0 +1,31 @@
+import sys
+from collections import Counter
+
+N = int(sys.stdin.readline())
+sumN = 0
+array = []
+for _ in range(N):
+    x = int(sys.stdin.readline())
+    sumN += x
+    array.append(x)
+
+array = sorted(array)
+count = Counter(array).most_common()
+
+#  산술 평균 출력
+print("{}".format(round(sumN/N)))
+
+#  중앙값 출력
+print(array[len(array)//2])
+
+#  최빈값 출력
+if N >= 2:
+    if count[0][1] == count[1][1]:
+        print(count[1][0])
+    else:
+        print(count[0][0])
+else:
+    print(count[0][0])
+
+#  범위 출력
+print(max(array) - min(array))
