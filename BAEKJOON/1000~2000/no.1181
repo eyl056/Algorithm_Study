@@ -1,0 +1,17 @@
+import sys
+
+N = int(sys.stdin.readline())
+array = []
+
+for i in range(N):
+    arr = []
+    word = sys.stdin.readline()
+    arr.append(len(word))
+    arr.append(word)
+    if arr not in array:
+        array.append(arr)
+
+array.sort()
+
+for li in array:
+    print(li[1], end='')
