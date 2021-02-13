@@ -1,0 +1,13 @@
+import sys
+
+N = int(sys.stdin.readline())
+movie = 666
+count = 0
+
+while True:
+    if '666' in str(movie):
+        count += 1
+    if count == N:
+        print(movie)
+        break
+    movie += 1
