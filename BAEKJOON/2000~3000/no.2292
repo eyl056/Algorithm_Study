@@ -1,0 +1,14 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+num = 1
+plusSix = 6
+room = 1
+
+while N > num:
+    room += 1
+    num += plusSix
+    plusSix += 6
+    
+print(room)
