@@ -1,0 +1,13 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for _ in range(T):
+    k = int(sys.stdin.readline())  # 층 수
+    n = int(sys.stdin.readline())  # 호 수
+    ff = [i for i in range(1, n + 1)]
+
+    for _ in range(k):
+        for p in range(1, n):
+            ff[p] += ff[p - 1]
+    print(ff[-1])
