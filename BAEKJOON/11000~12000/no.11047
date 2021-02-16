@@ -1,0 +1,19 @@
+import sys
+
+N, K = map(int, sys.stdin.readline().split())
+coins = []
+
+for _ in range (N):
+    coins.append(int(sys.stdin.readline()))
+
+coinsCount = 0
+coins.sort()
+coins.reverse()
+
+for coin in coins:
+    if K >= coin:
+        count = K // coin
+        K -= coin * count
+        coinsCount += count
+
+print(coinsCount)
