@@ -1,0 +1,12 @@
+import sys
+num = sys.stdin.readline().split("-")
+
+answer = 0
+for number in num[0].split("+"):
+    answer += int(number)
+
+for number in num[1:]:
+    for num in number.split("+"):
+        answer -= int(num)
+
+print(answer)
