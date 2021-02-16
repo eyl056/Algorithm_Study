@@ -1,0 +1,20 @@
+import sys
+
+N = int(sys.stdin.readline())
+time = []
+
+for _ in range(N):
+    startTime, endTime = map(int, sys.stdin.readline().split())
+    time.append([startTime, endTime])
+
+time = sorted(time, key=lambda a: a[0])
+time = sorted(time, key=lambda a: a[1])
+
+count = 0
+endT = 0
+for start, end in time:
+    if start >= endT:
+        count += 1
+        endT = end
+
+print(count)
