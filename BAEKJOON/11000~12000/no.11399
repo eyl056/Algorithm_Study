@@ -1,0 +1,16 @@
+import sys
+
+person = int(sys.stdin.readline())
+
+time = list(map(int, sys.stdin.readline().split()))
+
+time.sort()
+timeSum = 0
+
+for i in range(len(time)):
+    for j in range(len(time)):
+        if i >= j and i != len(time):
+            timeSum += time[j]
+
+
+print(timeSum)
