@@ -1,0 +1,45 @@
+import sys
+input = sys.stdin.readline
+
+stack = []
+
+def push(n):
+    stack.append(n)
+
+def pop():
+    if len(stack) != 0:
+        return stack.pop()
+    else:
+        return -1
+
+def size():
+    return len(stack)
+
+def empty():
+    if len(stack) == 0:
+        return 1
+    else:
+        return 0
+
+def top():
+    if len(stack) == 0:
+        return -1
+    else:
+        return stack[len(stack) - 1]
+
+N = int(input())
+for _ in range(N):
+    instruction = input().split()
+
+    inst = instruction[0]
+
+    if inst == "push":
+        push(instruction[1])
+    elif inst == "pop":
+        print(pop())
+    elif inst == "size":
+        print(size())
+    elif inst == "empty":
+        print(empty())
+    elif inst == "top":
+        print(top())
