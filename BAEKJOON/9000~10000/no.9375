@@ -1,0 +1,21 @@
+import sys
+
+input = sys.stdin.readline
+
+testcase = int(input())
+
+for _ in range(testcase):
+    clothCnt = int(input())
+    cloth = {}
+    for _ in range(clothCnt):
+        name, type = map(str, input().split())
+
+        if not type in cloth:
+            cloth[type] = []
+        cloth[type].append(name)
+
+    case = 1
+    for i in cloth:
+        case *= len(cloth[i]) + 1
+
+    print(case - 1)
