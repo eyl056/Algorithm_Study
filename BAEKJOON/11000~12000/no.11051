@@ -1,0 +1,9 @@
+import sys
+from math import factorial
+input = sys.stdin.readline
+
+N, K = map(int, input().split())
+
+NK = factorial(N) // (factorial(N - K) * factorial(K))
+
+print(NK % 10007)
