@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+def twoCnt(num):
+    case = 0
+    while num > 0:
+        num = num // 2
+        case += num
+    return case
+
+def fiveCnt(num):
+    case = 0
+    while num > 0:
+        num = num // 5
+        case += num
+    return case
+
+n, m = map(int, input().split())
+
+zeroCnt = min(twoCnt(n) - twoCnt(n - m) - twoCnt(m), fiveCnt(n) - fiveCnt(n - m) - fiveCnt(m))
+
+print(zeroCnt)
