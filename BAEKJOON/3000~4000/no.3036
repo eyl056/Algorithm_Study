@@ -1,0 +1,16 @@
+import sys
+input = sys.stdin.readline
+
+
+def gcd(a, b):
+    return gcd(b % a, a) if b % a else a
+
+
+ringCnt = int(input())
+rings = list(map(int, input().split()))
+
+firstRing = rings[0]
+for index, ring in enumerate(rings):
+    if index != 0:
+        x = gcd(firstRing, ring)
+        print("{}/{}".format(firstRing // x, ring // x))
