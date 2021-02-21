@@ -1,0 +1,23 @@
+import sys
+input = sys.stdin.readline
+
+zeroCnt = [1, 0]
+oneCnt = [0, 1]
+
+def fiboCnt(num):
+    if num <= 1:
+        return zeroCnt[num], oneCnt[num]
+    for i in range(2, num + 1):
+        zeroCnt.append(zeroCnt[i - 1] + zeroCnt[i - 2])
+        oneCnt.append(oneCnt[i - 1] + oneCnt[i - 2])
+
+    return zeroCnt[num], oneCnt[num]
+
+
+if __name__ == "__main__":
+    testcase = int(input().strip())
+    for _ in range(testcase):
+        zeroCnt = [1, 0]
+        oneCnt = [0, 1]
+        num = int(input())
+        print("{} {}".format(fiboCnt(num)[0], fiboCnt(num)[1]))
