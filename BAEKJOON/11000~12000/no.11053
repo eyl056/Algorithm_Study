@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+def LIS(N):
+    seq = list(map(int, input().strip().split()))
+    dp = [0 for _ in range(N)]
+
+    for i in range(N):
+        min = 0
+        for j in range(i):
+            if seq[i] > seq[j]:
+                min = max(min, dp[j])
+        dp[i] = min + 1
+
+    return max(dp)
+
+
+
+if __name__ == "__main__":
+    N = int(input().strip())
+
+    print(LIS(N))
