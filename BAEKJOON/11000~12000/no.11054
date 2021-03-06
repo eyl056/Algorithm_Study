@@ -23,8 +23,8 @@ def LIS(N):
 
 
     return max(map(add, incDp, decDp)) - 1
-
-
+    
+    
 
 if __name__ == "__main__":
     N = int(input().strip())
