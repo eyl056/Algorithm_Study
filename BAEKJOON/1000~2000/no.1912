@@ -1,0 +1,20 @@
+import sys
+
+input = sys.stdin.readline
+
+
+def seqSum(N):
+    seq = list(map(int, input().strip().split()))
+
+    dp = [0 for _ in range(N)]
+
+    for i in range(N):
+        dp[i] = max(seq[i], dp[i - 1] + seq[i])
+
+    return max(dp)
+
+
+if __name__ == "__main__":
+    N = int(input().strip())
+
+    print(seqSum(N))
