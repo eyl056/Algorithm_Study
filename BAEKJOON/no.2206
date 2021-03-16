@@ -1,0 +1,53 @@
+import sys
+input = sys.stdin.readline
+from collections import deque
+
+
+N, M = map(int, input().strip().split())
+
+visited = [[[0 for _ in range(M)] for _ in range(N)] for _ in range(2)]
+
+graph = []
+for _ in range(N):
+    graph.append(list(map(int, input().strip())))
+
+
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+queue = deque()
+
+if N == 1 and M == 1 and graph[0][0] == 0:
+    print(1)
+else:
+    visited[0][0][0] = 1
+    queue.append([0, 0, 0])
+
+    flag = 0
+    while queue:
+        x, y, z = queue.popleft()
+
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if 0 <= nx < N and 0 <= ny < M and visited[z][nx][ny] == 0:
+
+                if graph[nx][ny] == 1 and z == 0:
+                    visited[1][nx][ny] = visited[0][x][y] + 1
+                    queue.append([nx, ny, 1])
+
+                elif graph[nx][ny] == 0:
+                    visited[z][nx][ny] = visited[z][x][y] + 1
+                    queue.append([nx, ny, z])
+
+                if nx == N - 1 and ny == M - 1:
+                    print(visited[z][nx][ny])
+                    flag = 1
+                    break
+
+        if flag == 1:
+            break
+
+    if flag == 0:
+        print(-1)
