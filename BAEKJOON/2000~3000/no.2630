@@ -1,0 +1,41 @@
+import sys
+input = sys.stdin.readline
+
+
+def checkSame(x, y, N):
+    global matrix, blue, white
+    color = matrix[x][y]
+    flagSame = True
+
+    for i in range(x, x + N):
+        if not flagSame:
+            break
+
+        for j in range(y, y + N):
+            if color != matrix[i][j]:
+                flagSame = False
+                checkSame(x, y, N // 2)
+                checkSame(x, y + N//2, N//2)
+                checkSame(x + N//2, y, N//2)
+                checkSame(x + N//2, y+N//2, N//2)
+                break
+
+    if flagSame:
+        if color:
+            blue += 1
+        else:
+            white += 1
+
+
+if __name__ == "__main__":
+    N = int(input())
+    matrix = []
+    blue = 0
+    white = 0
+
+    for i in range(N):
+        matrix.append(list(map(int, input().strip().split())))
+
+    checkSame(0, 0, N)
+    print(white)
+    print(blue)
