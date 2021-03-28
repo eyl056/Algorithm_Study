@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+
+def binomial(a, N, p):
+    if N == 0:
+        return 1
+    res = binomial(a * a % p, N//2, p)
+    if N & 1:
+        res = res * a % p
+    return res
+
+
+if __name__ == "__main__":
+    N, K = map(int, input().strip().split())
+
+    fac = [1, 1]
+    p = 1000000007
+    for i in range(2, N + 1):
+        fac.append((fac[-1] * i) % p)
+
+    print(fac[N] * binomial(fac[K] * fac[N - K], p - 2, p) % p)
