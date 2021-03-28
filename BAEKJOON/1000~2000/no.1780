@@ -1,0 +1,50 @@
+import sys
+input = sys.stdin.readline
+
+
+def checkSame(x, y, N):
+    global matrix, minus, zero, plus
+    num = matrix[x][y]
+    flag = True
+
+    for i in range(x, x + N):
+        if not flag:
+            break
+
+        for j in range(y, y + N):
+            if num != matrix[i][j]:
+                flag = False
+                checkSame(x, y, N // 3)
+                checkSame(x, y + N//3, N//3)
+                checkSame(x, y + 2 * N//3, N//3)
+                checkSame(x + N//3, y, N//3)
+                checkSame(x + N // 3, y + N // 3, N // 3)
+                checkSame(x + N//3, y + 2 * N//3, N//3)
+                checkSame(x + 2 * N // 3, y, N // 3)
+                checkSame(x + 2 * N // 3, y + N // 3, N // 3)
+                checkSame(x + 2 * N // 3, y + 2 * N // 3, N // 3)
+                break
+
+    if flag:
+        if num == -1:
+            minus += 1
+        elif num == 0:
+            zero += 1
+        else:
+            plus += 1
+
+
+if __name__ == "__main__":
+    N = int(input())
+    matrix = []
+    minus = 0
+    zero = 0
+    plus = 0
+
+    for i in range(N):
+        matrix.append(list(map(int, input().strip().split())))
+
+    checkSame(0, 0, N)
+    print(minus)
+    print(zero)
+    print(plus)
