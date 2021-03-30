@@ -1,0 +1,31 @@
+import sys
+
+input = sys.stdin.readline
+
+
+def maxArea(N, testcase):
+    maxSize = 0
+    stack = []
+
+    for i in range(N):
+        minPoint = i
+        while stack and stack[-1][0] >= testcase[i]:
+            h, minPoint = stack.pop()
+            tmp = h * (i - minPoint)
+            maxSize = max(maxSize, tmp)
+        stack.append([testcase[i], minPoint])
+
+    for h, point in stack:
+        maxSize = max(maxSize, (N - point) * h)
+
+    return maxSize
+
+
+if __name__ == "__main__":
+    while True:
+        case = list(map(int, input().split()))
+
+        if case[0] != 0:
+            print(maxArea(case[0], case[1:len(case)]))
+        else:
+            break
