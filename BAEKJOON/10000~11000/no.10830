@@ -1,0 +1,48 @@
+import sys
+input = sys.stdin.readline
+
+
+def matMul(mat1, mat2, N):
+    result = [[0] * N for _ in range(N)]
+    for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                result[i][j] += mat1[i][k] * mat2[k][j]
+
+    for i in range(N):
+        for j in range(N):
+            result[i][j] %= 1000
+
+    return result
+
+
+def divideMul(mat, B, N):
+    if B == 1:
+        for i in range(N):
+            for j in range(N):
+                mat[i][j] %= 1000
+
+        return mat
+
+    elif B % 2 == 1:
+        dMat = divideMul(mat, B-1, N)
+        matrix = matMul(mat, dMat, N)
+
+        return matrix
+
+    else:
+        dMat = divideMul(mat, B // 2, N)
+        matrix = matMul(dMat, dMat, N)
+
+        return matrix
+
+
+if __name__ == "__main__":
+    N, B = map(int, input().split())
+    matrix = [list(map(int, input().split())) for _ in range(N)]
+
+    resultMatrix = divideMul(matrix, B, N)
+
+    for row in resultMatrix:
+        print(*row)
+
