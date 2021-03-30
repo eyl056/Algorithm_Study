@@ -6,7 +6,7 @@ def binomial(a, N, p):
     if N == 0:
         return 1
     res = binomial(a * a % p, N//2, p)
-    if N & 1:
+    if N % 2 == 1:
         res = res * a % p
     return res
 
