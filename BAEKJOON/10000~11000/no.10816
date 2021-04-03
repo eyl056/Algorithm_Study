@@ -1,0 +1,14 @@
+import sys
+input = sys.stdin.readline
+from collections import Counter
+
+if __name__ == "__main__":
+    N = int(input())
+    A = list(map(int, input().strip().split()))
+
+    M = int(input())
+    mList = list(map(int, input().strip().split()))
+
+    A = Counter(A)
+    for i in mList:
+        print(A[i], end=' ')
