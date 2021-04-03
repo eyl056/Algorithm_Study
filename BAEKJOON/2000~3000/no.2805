@@ -1,0 +1,23 @@
+# pypy3
+import sys
+input = sys.stdin.readline
+
+if __name__ == "__main__":
+    N, M = map(int, input().strip().split())
+
+    trees = list(map(int, input().strip().split()))
+
+    start, end = 0, max(trees)
+
+    while start <= end:
+        mid = (start + end) // 2
+        total = 0
+        for tree in trees:
+            if tree - mid > 0:
+                total += tree - mid
+        if total >= M:
+            start = mid + 1
+        else:
+            end = mid - 1
+
+    print(end)
