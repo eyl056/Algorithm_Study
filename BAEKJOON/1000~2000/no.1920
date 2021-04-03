@@ -1,0 +1,31 @@
+import sys
+input = sys.stdin.readline
+
+
+def binarySearch(N, A, start, end):
+    if start > end:
+        return 0
+
+    mid = (start + end) // 2
+
+    if N == A[mid]:
+        return 1
+    elif N < A[mid]:
+        end = mid - 1
+    elif N > A[mid]:
+        start = mid + 1
+
+    return binarySearch(N, A, start, end)
+
+if __name__ == "__main__":
+    N = int(input())
+
+    A = []
+    A = list(map(int, input().strip().split()))
+    A = sorted(A)
+
+    M = int(input())
+    mList = list(map(int, input().strip().split()))
+
+    for i in range(M):
+        print(binarySearch(mList[i], A, 0, N - 1))
