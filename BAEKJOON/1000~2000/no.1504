@@ -1,0 +1,42 @@
+import sys
+from heapq import heappush, heappop
+input = sys.stdin.readline
+
+
+def dijkstra(start, end):
+    queue = []
+    dijk = [int(1e9)] * (N + 1)
+    dijk[start] = 0
+    queue.append((0, start))
+    while queue:
+        dis, s = heappop(queue)
+        if dijk[s] < dis:
+            continue
+        for d, x in graph[s]:
+            d += dis
+            if dijk[x] > d:
+                dijk[x] = d
+                heappush(queue, (d, x))
+
+    return dijk[end]
+
+
+if __name__ == "__main__":
+    N, E = map(int, input().strip().split())
+
+    graph = [[] for _ in range(N + 1)]
+
+    for _ in range(E):
+        a, b, c = map(int, input().strip().split())
+        graph[a].append([c, b])
+        graph[b].append([c, a])
+
+    v1, v2 = map(int, input().strip().split())
+
+    c1 = dijkstra(1, v1) + dijkstra(v1, v2) + dijkstra(v2, N)
+    c2 = dijkstra(1, v2) + dijkstra(v2, v1) + dijkstra(v1, N)
+
+    if c1 > int(1e9) or c2 > int(1e9):
+        print(-1)
+    else:
+        print(min(c1, c2))
