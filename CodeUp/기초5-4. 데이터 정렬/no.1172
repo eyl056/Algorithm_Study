@@ -1,0 +1,8 @@
+import sys
+input = sys.stdin.readline
+
+if __name__ == "__main__":
+    A = sorted(list(map(int, input().strip().split())))
+
+    for i in A:
+        print(i, end=' ')
