@@ -1,0 +1,52 @@
+import sys
+from heapq import heappush, heappop
+input = sys.stdin.readline
+
+
+def dijkstra(start):
+    queue = []
+    distance = [int(1e9) for _ in range(n + 1)]
+    # 시작 노드에 대해서 초기화
+    distance[start] = 0
+    queue.append([0, start])
+    while queue:
+        dis, s = heappop(queue)
+        for d, x in graph[s]:
+            de = dis + x
+            if distance[d] > de:
+                distance[d] = de
+                heappush(queue, [de, d])
+
+    return distance
+
+
+T = int(input().strip())
+for _ in range(T):
+    n, m, t = map(int, input().strip().split())
+    s, g, h = map(int, input().strip().split())
+
+    graph = [[] for _ in range(n + 1)]
+    for _ in range(m):
+        a, b, d = map(int, input().strip().split())
+        graph[a].append([b, d])
+        graph[b].append([a, d])
+
+    # 목적지 후보
+    dist = []
+    for _ in range(t):
+        dist.append(int(input()))
+
+    start_ = dijkstra(s)
+    g_ = dijkstra(g)
+    h_ = dijkstra(h)
+
+    answer = []
+
+    for i in dist:
+        # 출발 - 도착 최단거리와 같으면 도착지점 저장
+        if start_[g] + g_[h] + h_[i] == start_[i] or start_[h] + h_[g] + g_[i] == start_[i]:
+            answer.append(i)
+    answer.sort()
+    for i in answer:
+        print(i, end=' ')
+    print()
