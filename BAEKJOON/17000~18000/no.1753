@@ -1,0 +1,45 @@
+import sys
+from heapq import heappush, heappop
+input = sys.stdin.readline
+
+
+def dijkstra(start):
+    queue = []
+    global distance
+    # 시작 노드에 대해서 초기화
+    distance[start] = 0
+    queue.append((0, start))
+    while queue:
+        dis, s = heappop(queue)
+        if distance[s] < dis:
+            continue
+        for d, x in graph[s]:
+            d += dis
+            if distance[x] > d:
+                distance[x] = d
+                heappush(queue, (d, x))
+
+
+if __name__ == "__main__":
+    # 정점의 개수 V, 간선의 개수 E
+    V, E = map(int, input().strip().split())
+    # 시작 정점의 번호 K
+    K = int(input().strip())
+
+    graph = [[] for _ in range(V + 1)]
+
+    # 최단 거리 테이블을 모두 무한으로 초기화
+    distance = [int(1e9)] * (V + 1)
+
+    for _ in range(E):
+        u, v, w = map(int, input().strip().split())
+        # (가중치, 목적지 노드) append
+        graph[u].append([w, v])
+
+    dijkstra(K)
+    
+    for i in range(1, V + 1):
+        if distance[i] == int(1e9):
+            print("INF")
+        else:
+            print(distance[i])
