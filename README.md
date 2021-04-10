@@ -11,4 +11,4 @@ https://eyl056.github.io/enyungBlog/categories/#baekjoon
 https://eyl056.github.io/enyungBlog/categories/#algospot
 
 > ndbBook<br>
-이것이 취업을 위한 코딩테스트다 with 파이썬 - 나동빈
+[이것이 취업을 위한 코딩테스트다 with 파이썬 - 나동빈](http://hanbit.co.kr/store/books/look.php?p_code=B8945183661)
