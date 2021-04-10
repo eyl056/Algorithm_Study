@@ -1,0 +1,32 @@
+import sys
+input = sys.stdin.readline
+
+
+# 전체 용액의 수
+n = int(input().strip())
+# 정렬된 용액(음 -> 양)
+liquid = sorted(list(map(int, input().strip().split())))
+
+start = 0
+end = n - 1
+preSum = liquid[start] + liquid[end]
+preL = start
+preR = end
+
+while start < end:
+    sum = liquid[start] + liquid[end]
+    # 기존의 두 용액의 특성값로의 절대값보다 작으면, 더 작은걸로
+    if abs(sum) < abs(preSum):
+        preSum = sum
+        preL = start
+        preR = end
+        if preSum == 0:
+            break
+    # 두 용액의 특성값이 0보다 작으면,
+    if sum < 0:
+        start += 1
+    # 두 용액의 특성값이 0보다 크면
+    else:
+        end -= 1
+
+print(liquid[preL], liquid[preR])
