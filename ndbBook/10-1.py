@@ -29,10 +29,13 @@ for i in range(e):
     a, b = map(int, input().split())
     union_parent(parent, a, b)
 
+# 각 원소의 루트 노드 출력 => 이 루트 노드가 같은 원소끼리는 동일한 집합을 이룸
 # 각 원소가 속한 집합 출력
+# 최악의 경우 모든 노드를 다 확인하기 때문에 비효율적 => O(V)
+# 노드의 개수 V, find 또는 union 연산 M개 => 전체 시간 복잡도는 O(VM)
 print('각 원소가 속한 집합: ', end='')
 for i in range(1, v + 1):
-    print(find_parent(parent, i), end=' ')
+    print(find_parent(parent, i), end=' ') d
 
 print()
 
