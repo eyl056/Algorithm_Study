@@ -1,0 +1,15 @@
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+N_ = N
+cycle = 0
+while True:
+    sum = 0
+    cycle += 1
+    for i in str(N_):
+        sum += int(i)
+    N_ = str(N_)[-1] + str(sum)[-1]
+    if int(N_) == N:
+        print(cycle)
+        break
