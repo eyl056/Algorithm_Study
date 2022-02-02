@@ -1,25 +1,20 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int collaboration(int x, int y) {
-        int[][] dp = new int[31][31];
-
-        for (int i = 1; i < 30; i++) {
-            for (int j = 1; j < 30; j++) {
-                dp[i + 1][j + 1] = dp[i][j] + dp[i][j + 1];
-            }
+    static int[][] dp = new int[30][30];
+    static int combination(int n, int r) {
+        if(dp[n][r] > 0) {
+            return dp[n][r];
         }
 
-        for (int i = 1; i < 31; i++) {
-            dp[i][i] = 1;
-            dp[i][0] = 1;
+        if(n == r || r == 0) {
+            return dp[n][r] = 1;
         }
 
-        return dp[x][y];
+        return dp[n][r] = combination(n - 1, r - 1) + combination(n - 1, r);
     }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,10 +22,10 @@ public class Main {
         int T = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < T; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             int west = Integer.parseInt(st.nextToken());
             int east = Integer.parseInt(st.nextToken());
-            System.out.print(collaboration(west, east));
+            System.out.println(combination(east, west));
         }
 
         br.close();
