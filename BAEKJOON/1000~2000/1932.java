@@ -12,8 +12,8 @@ public class Main {
         int[][] tri = new int[N][N];
 
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                StringTokenizer st = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < i + 1; j++) {
                 tri[i][j] = Integer.parseInt(st.nextToken());
             }
         }
