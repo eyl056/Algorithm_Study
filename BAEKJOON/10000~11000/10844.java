@@ -8,12 +8,12 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
 
-        int[][] dp = new int[101][10];
+        long[][] dp = new long[N + 1][10];
 
         dp[1][0] = 0;
 
         for (int i = 1; i < 10; i++) {
-            dp[1][i] = 1;
+            dp[1][i] = 1L;
         }
 
         for (int i = 2; i < N + 1; i++) {
