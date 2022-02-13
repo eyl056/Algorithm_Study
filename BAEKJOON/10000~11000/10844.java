@@ -1,6 +1,6 @@
 import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+        import java.io.BufferedReader;
+        import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -24,12 +24,12 @@ public class Main {
             }
         }
 
-        int sum = 0;
-        for (int i = 0; i < dp[N].length; i++) {
+        long sum = 0;
+        for (int i = 0; i < 10; i++) {
             sum += dp[N][i];
         }
 
-        System.out.print(sum);
+        System.out.print(sum % 1000000000);
 
         br.close();
     }
